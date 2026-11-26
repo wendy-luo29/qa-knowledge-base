@@ -1,0 +1,19 @@
+# 测试影响索引（模板）
+# 维护规则见 schema/impact-index.md
+
+changes:
+  - id: CHG-001
+    module: <模块>
+    feature: <功能>
+    field: <字段 / 变更单元>
+    date: "yyyy-MM-dd"
+    type: rule_change
+    description: |
+      变更内容与判定口径
+    affected_carriers: [all]
+    regression_targets: []
+    coverage_gap: "<无自动化用例时说明缺口>"
+    gotchas: []
+    knowledge_docs:
+      - knowledge/rules/<module>/<feature>.md
+    status: active
