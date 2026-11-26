@@ -167,7 +167,7 @@ def check_case_mapping(list_ids: set[str], script_ids: set[str]) -> None:
     脚本有、清单无 → WARN（脚本未登记，报告无法关联 AC）。
     """
     if not list_ids and not script_ids:
-        warn("CASE-MAP", "testcases/*.yaml 与 tests/**/*.py 均未声明 case_id")
+        # 空项目（尚未设计用例）不视为告警；任一侧有内容才做对齐校验。
         return
     for cid in sorted(list_ids - script_ids):
         err("CASE-MAP", f"用例清单中的 {cid} 在 tests/ 脚本里找不到 `# case_id:`，清单不可执行")
